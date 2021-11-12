@@ -69,10 +69,15 @@
                 return;
             }
 
-            /* This is often a good match if the text itself isn't. */
+            /* These are often a good match if the text itself isn't. */
             if (link.attributes["aria-label"]) {
                 strs.push(link.attributes["aria-label"].nodeValue);
             }
+
+            if (link.attributes["class"]) {
+                strs.push(link.attributes["class"].nodeValue);
+            }
+
 
             for (let str of strs) {
                 if (typeof str === "undefined") {
